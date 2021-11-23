@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="GI Web App Automation" preserve-order="true">
+	<test name="Polict Creation">
+    	<parameter name="test-id" value="newpol_001"/>
+	    <parameter name="test-config" value="PolicyConfig"/>
+	    <parameter name="test-config-sheet" value="NewPolicy"/>
+	    <classes>
+	    	<class name="testDrivers.TestDriver"/>
+	    </classes>
+	</test>
+	
+ </suite> 	
