@@ -62,6 +62,7 @@ public class LoginTest {
 		// TODO Auto-generated method stub
 		String testRunStatus = "F";
 		navLogin(driver, datArr, test);
+		Thread.sleep(2000);
 		WebElement btnSubmit = LoginPage.btnSubmitLogin(driver);
 		btnSubmit.click();
 		testRunStatus = "P";
@@ -74,15 +75,16 @@ public class LoginTest {
 		userName.sendKeys(datArr[4]);
 		LoggerUtils.logInfo("User Name: " + datArr[4]);
 		test.pass("User Name:" + datArr[4]);		
-		
+		Thread.sleep(1000);
 		WebElement userPwd = LoginPage.userPwd(driver);
 		userPwd.clear();
 		userPwd.sendKeys(datArr[5]);
 		LoggerUtils.logInfo("Password: " + datArr[5]);
-		test.pass("Password: " + datArr[5]);		
+		test.pass("Password: " + datArr[5]);	
+		Thread.sleep(2000);
 
 	}
-
+	
 	public static WebDriver setUp(WebDriver driver) {
 		driver = Genlib.webDriverSetUp();
 		String url = projlib.Globals.LOGIN_URL;

@@ -1,17 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-11-23T12:39:42 IST" name="GI Web App Automation" finished-at="2021-11-23T12:39:52 IST" duration-ms="9926">
+  <suite started-at="2021-11-25T23:26:35 IST" name="GI Web App Automation" finished-at="2021-11-25T23:29:09 IST" duration-ms="153746">
     <groups>
     </groups>
-    <test started-at="2021-11-23T12:39:42 IST" name="Polict Creation" finished-at="2021-11-23T12:39:52 IST" duration-ms="9926">
+    <test started-at="2021-11-25T23:26:35 IST" name="Polict Creation" finished-at="2021-11-25T23:27:49 IST" duration-ms="74472">
       <class name="testDrivers.TestDriver">
-        <test-method is-config="true" signature="beforeSuite()[pri:0, instance:testDrivers.TestDriver@4567f35d]" started-at="2021-11-23T12:39:42 IST" name="beforeSuite" finished-at="2021-11-23T12:39:42 IST" duration-ms="133" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeSuite -->
-        <test-method signature="tDriver(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:testDrivers.TestDriver@4567f35d]" started-at="2021-11-23T12:39:42 IST" name="tDriver" finished-at="2021-11-23T12:39:52 IST" duration-ms="9902" status="PASS">
+        <test-method signature="tDriver(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:testDrivers.TestDriver@4567f35d]" started-at="2021-11-25T23:26:35 IST" name="tDriver" finished-at="2021-11-25T23:27:49 IST" duration-ms="74442" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -32,11 +28,40 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tDriver -->
-        <test-method is-config="true" signature="endReport()[pri:0, instance:testDrivers.TestDriver@4567f35d]" started-at="2021-11-23T12:39:52 IST" name="endReport" finished-at="2021-11-23T12:39:52 IST" duration-ms="214" status="PASS">
+      </class> <!-- testDrivers.TestDriver -->
+    </test> <!-- Polict Creation -->
+    <test started-at="2021-11-25T23:27:49 IST" name="Polict Creation check for duplicate policy number" finished-at="2021-11-25T23:29:09 IST" duration-ms="79253">
+      <class name="testDrivers.TestDriver">
+        <test-method is-config="true" signature="beforeSuite()[pri:0, instance:testDrivers.TestDriver@57a3af25]" started-at="2021-11-25T23:26:35 IST" name="beforeSuite" finished-at="2021-11-25T23:26:35 IST" duration-ms="163" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeSuite -->
+        <test-method signature="tDriver(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:testDrivers.TestDriver@57a3af25]" started-at="2021-11-25T23:27:49 IST" name="tDriver" finished-at="2021-11-25T23:29:09 IST" duration-ms="79251" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[newpol_002]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[PolicyConfig]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[NewPolicy]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tDriver -->
+        <test-method is-config="true" signature="endReport()[pri:0, instance:testDrivers.TestDriver@57a3af25]" started-at="2021-11-25T23:29:09 IST" name="endReport" finished-at="2021-11-25T23:29:09 IST" duration-ms="305" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- endReport -->
       </class> <!-- testDrivers.TestDriver -->
-    </test> <!-- Polict Creation -->
+    </test> <!-- Polict Creation check for duplicate policy number -->
   </suite> <!-- GI Web App Automation -->
 </testng-results>

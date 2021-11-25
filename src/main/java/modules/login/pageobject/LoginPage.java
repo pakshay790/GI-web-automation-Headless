@@ -28,7 +28,7 @@ public class LoginPage {
 	public static WebElement btnSubmitLogin(WebDriver driver)
 	{
 		WebElement element=null;
-		WebDriverWait wait=new WebDriverWait(driver, 50);
+		WebDriverWait wait=new WebDriverWait(driver, 100);
 		element=wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//span[contains(text(),'LOGIN')]")));
 		return element;
 	}

@@ -22,7 +22,15 @@ public class PolicyPage {
 	{
 		WebElement element=null;
 		WebDriverWait wait=new WebDriverWait(driver, 50);
-		element=wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//body/app-root[1]/app-page-policies[1]/div[1]/main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/label[1]")));
+		element=wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//body[1]/app-root[1]/app-page-policy[1]/div[1]/main[1]/div[1]/div[1]/label[1]")));
+		return element;
+	}
+	
+	public static WebElement sideBarPolicyProfile(WebDriver driver)
+	{
+		WebElement element=null;
+		WebDriverWait wait=new WebDriverWait(driver, 50);
+		element=wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//span[@class='anchor-caption'][normalize-space()='Policy Profile']")));
 		return element;
 	}
 	

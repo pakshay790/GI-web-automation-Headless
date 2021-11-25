@@ -30,17 +30,17 @@ public class TestDriver
 
 	@BeforeSuite
 	public void beforeSuite(){
-		//htmlReporter = new ExtentHtmlReporter("c:/tech/seleniumwork/eSamridhi/extentreports/eSamridhi_TestRun.html");
+		
 		htmlReporter = new ExtentHtmlReporter(Globals.EXTENT_REPORT);
 		//htmlReporter.setAppendExisting(true);
 		extent = new ExtentReports();
 		extent.attachReporter(htmlReporter);
 
-		// make the charts visible on report open
+		// make the charts visible on report open 
 		htmlReporter.config().setChartVisibilityOnOpen(true);
 
 		// report title
-		htmlReporter.config().setDocumentTitle("eSamridhi - Regression Run");
+		htmlReporter.config().setDocumentTitle("GI Web App Regreesion");
 
 		// encoding, default = UTF-8
 		htmlReporter.config().setEncoding("UTF-8");

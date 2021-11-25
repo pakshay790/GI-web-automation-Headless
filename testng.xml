@@ -10,4 +10,13 @@
 	    </classes>
 	</test>
 	
- </suite> 	
+	<test name="Polict Creation check for duplicate policy number">
+    	<parameter name="test-id" value="newpol_002"/>
+	    <parameter name="test-config" value="PolicyConfig"/>
+	    <parameter name="test-config-sheet" value="NewPolicy"/>
+	    <classes>
+	    	<class name="testDrivers.TestDriver"/>
+	    </classes>
+	</test>
+ </suite> 
+ 	
