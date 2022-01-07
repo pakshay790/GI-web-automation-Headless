@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="GI Web App Automation" preserve-order="true">
-	<test name="Polict Creation">
+	 <test name="Polict Creation">
     	<parameter name="test-id" value="newpol_001"/>
 	    <parameter name="test-config" value="PolicyConfig"/>
 	    <parameter name="test-config-sheet" value="NewPolicy"/>
@@ -10,13 +10,31 @@
 	    </classes>
 	</test>
 	
-	<test name="Polict Creation check for duplicate policy number">
+	<!--<test name="Polict Creation check for duplicate policy number">
     	<parameter name="test-id" value="newpol_002"/>
 	    <parameter name="test-config" value="PolicyConfig"/>
 	    <parameter name="test-config-sheet" value="NewPolicy"/>
 	    <classes>
 	    	<class name="testDrivers.TestDriver"/>
 	    </classes>
+	</test> -->
+	
+	<test name="Creating Debit note of Policy">
+    	<parameter name="test-id" value="newInsDN_001"/>
+	    <parameter name="test-config" value="INSDNCNConfig"/>
+	    <parameter name="test-config-sheet" value="NewDNCN"/>
+	    <classes>
+	    	<class name="testDrivers.TestDriver"/>
+	    </classes>
 	</test>
+	
+	 <test name="Creating OR">
+    	<parameter name="test-id" value="newInsOR_001"/>
+	    <parameter name="test-config" value="INSORConfig"/>
+	    <parameter name="test-config-sheet" value="NewOR"/>
+	    <classes>
+	    	<class name="testDrivers.TestDriver"/>
+	    </classes>
+	</test> 
  </suite> 
  	

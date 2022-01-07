@@ -1,24 +1,19 @@
-package modules.policycreation.tests;
+package modules.insuranceOR.tests;
 
 import java.io.File;
 import java.util.HashMap;
 
-import javax.xml.xpath.XPath;
-
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 import modules.common.pageobject.commonPage;
-import modules.insuranceDNCN.pageobject.InsDNCNPage;
+import modules.insuranceOR.pageobject.InsORPage;
 import modules.login.pageobject.*;
 import modules.login.tests.LoginTest;
-import modules.policycreation.pageobject.PolicyCreatePage;
-import modules.policycreation.pageobject.PolicyPage;
 import projlib.Globals;
 import utility.LoggerUtils;
 
@@ -26,9 +21,9 @@ import com.aventstack.extentreports.ExtentTest;
 
 import gtlib.Genlib;
 
-public class PolicyTest {
+public class InsORTest {
 
-	public static HashMap<String, String> NewPolicy(String strData, ExtentTest test, String depVal) throws Exception {
+	public static HashMap<String, String> NewOR(String strData, ExtentTest test, String depVal) throws Exception {
 		
 		HashMap<String, String> hMapRetObj = new HashMap<String, String>();
 		hMapRetObj.put("testRunStatus", Globals.FAIL);
@@ -39,7 +34,6 @@ public class PolicyTest {
 
 		String[] datArr = strData.split("\\|");
 		String[] arrMetaData = datArr[3].split("\\,");
-		String[] depValue = depVal.split("\\|");
 
 		try {
 			testSetUp(driver, datArr, test);
@@ -52,12 +46,87 @@ public class PolicyTest {
 			LoggerUtils.logInfo("Sidebar menu clicked");
 			Genlib.sleep(4000);
 
-			WebElement sideBarInsurance = commonPage.sidebarInsurance(driver);
-			sideBarInsurance.click();
-			LoggerUtils.logInfo("Sidebar Insurance menu clicked");
+			WebElement sideBarAR = commonPage.sidebarAR(driver);
+			sideBarAR.click();
+			LoggerUtils.logInfo("Sidebar Account Receivables menu selected");
 			Genlib.sleep(4000);
+			
+			WebElement sideBarOR = InsORPage.sideBarMenuOR(driver);
+			sideBarOR.click();
+			LoggerUtils.logInfo("Sidebar Official Receipt menu selected");
+			Genlib.sleep(5000);
+			
+			WebElement txtCustomerName = InsORPage.txtCustomerName(driver);
+			txtCustomerName.click(); 
+			Genlib.sleep(1000); 
+			WebElement txtCustomerNameVal = InsORPage.txtCustomerNameVal(driver,datArr[6]); 
+			txtCustomerNameVal.click();
+			LoggerUtils.logInfo("Customer name entered");
+			test.pass("Customer name entered"); 
+			Genlib.sleep(3000);
+			
+			WebElement txtPaymentMode = InsORPage.txtPaymentMode(driver);
+			txtPaymentMode.click(); 
+			Genlib.sleep(1000); 
+			WebElement txtPaymentModeVal = InsORPage.txtPaymentModeVal(driver,datArr[7]); 
+			txtPaymentModeVal.click();
+			LoggerUtils.logInfo("Payment mode Selected");
+			test.pass("Payment mode Selected"); 
+			Genlib.sleep(3000);
+			
+			WebElement txtBankCode = InsORPage.txtBankCode(driver);
+			txtBankCode.click(); 
+			Genlib.sleep(1000); 
+			WebElement txtBankCodeVal = InsORPage.txtBankCodeVal(driver,datArr[8]); 
+			txtBankCodeVal.click();
+			LoggerUtils.logInfo("Bank Account code Selected");
+			test.pass("Bank Account code Selected"); 
+			Genlib.sleep(3000);
+			
+			WebElement txtAmountPaid = InsORPage.txtAmountPaid(driver);
+			txtAmountPaid.clear();
+			Genlib.sleep(1000);
+			txtAmountPaid.sendKeys(datArr[10]);
+			LoggerUtils.logInfo("Amount paid entered");
+			test.pass("Amount paid entered"); 
+			Genlib.sleep(3000);
+			
+			WebElement btnAutoKnockoff = InsORPage.btnAutoknockOff(driver);
+			btnAutoKnockoff.click();
+			Genlib.sleep(3000);
+			LoggerUtils.logInfo("Auto Knockoff button clicked");
+			test.pass("Auto Knockoff button clicked"); 
+			
+			WebElement btnSave = InsORPage.btnSave(driver);
+			btnSave.click();
+			
+			LoggerUtils.logInfo("Save Button Clicked");
+			test.pass("Save Button Clicked");
+			Genlib.sleep(5000);
+			
+			String tmp = driver.findElement(By.xpath("//body[1]/app-root[1]/app-page-receipt[1]/div[1]/main[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/app-partial-_arreceipt[1]/section[1]/form[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/wm-input[1]/input[1]")).getAttribute("value");
+			LoggerUtils.logInfo("Official Receipt Number fetched");
+			Genlib.sleep(2000);
+			System.out.println(tmp);
+			
+			hMapRetObj.put("testRunStatus", Globals.PASS);
+			hMapRetObj.put("depUpdateVal", tmp);
+			
+			Genlib.sleep(2000);
+			File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+			FileUtils.copyFile(scrFile, new File(Globals.SCREENSHOT_DIR + datArr[0] + ".png"));
+			LoggerUtils.logInfo("Official Receipt created");
+			test.pass("Official Receipt created").addScreencastFromPath("file:///" + Globals.SCREENSHOT_DIR + datArr[0] + ".png");
+			
+			/*
+			 * WebElement alertMsg = InsORPage.alertSuccess(driver); String msg =
+			 * alertMsg.getText();
+			 * 
+			 * System.out.println(msg); Genlib.sleep(3000);
+			 */
+	
 
-			WebElement sideBarPolicyCreate = PolicyPage.sideBarPolicyProfile(driver);
+			/*WebElement sideBarPolicyCreate = PolicyPage.sideBarPolicyProfile(driver);
 			sideBarPolicyCreate.click();
 			LoggerUtils.logInfo("Sidebar Policy profile menu clicked");
 			Genlib.sleep(4000);
@@ -175,27 +244,19 @@ public class PolicyTest {
 			Genlib.sleep(2000);
 			System.out.println(alertmsg.getText());
 			
-			if ((!datArr[3].equals("duplicateCheck"))  && (alertmsg.getText().equals("Policy Created Successfully."))) {
-				
-				WebElement btnAlertOk = PolicyCreatePage.btnAlertOk(driver);
-				btnAlertOk.click(); 
-				LoggerUtils.logInfo("Ok btton Clicked");
-				test.pass("Ok  btton Clicked");
-				Genlib.sleep(2000);
-				
+			if ((!datArr[3].equals("duplicateCheck"))  && (alertmsg.getText().equals("Created Successfully"))) {
+				alertmsg.click();
 				hMapRetObj.put("testRunStatus", Globals.PASS);
-				hMapRetObj.put("depUpdateVal", datArr[7]);
-				
-				Genlib.sleep(2000);
+				hMapRetObj.put("depUpdateVal", "");
 				File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 				FileUtils.copyFile(scrFile, new File(Globals.SCREENSHOT_DIR + datArr[0] + ".png"));
-				LoggerUtils.logInfo("Policy Created Successfully");
-				test.pass("Policy Created Successfully").addScreencastFromPath("file:///" + Globals.SCREENSHOT_DIR + datArr[0] + ".png");
+				LoggerUtils.logInfo("Policy number should be unique!, Unable to Create Policy");
+				test.pass("Policy number should be unique!, Unable to Create Policy").addScreencastFromPath("file:///" + Globals.SCREENSHOT_DIR + datArr[0] + ".png");
 
 			} 
 			
 			else if((datArr[3].equals("duplicateCheck")) && (alertmsg.getText().equals("Policy number should be unique!"))){
-				
+				alertmsg.click();
 				hMapRetObj.put("testRunStatus", Globals.PASS);
 				hMapRetObj.put("depUpdateVal", "");
 				File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
@@ -209,7 +270,7 @@ public class PolicyTest {
 				hMapRetObj.put("depUpdateVal", "");
 				LoggerUtils.logError("Failed in test case execution", null);
 				Genlib.webDriverTearDown(driver);
-			}
+			}*/
 
 		} catch (Exception e) {
 			hMapRetObj.put("testRunStatus", Globals.EXCEPTION);
