@@ -35,8 +35,7 @@
 	    <classes>
 	    	<class name="testDrivers.TestDriver"/>
 	    </classes>
-	</test>  
-	 -->
+	</test> 
 	
 	<test name="Creating AP">
     	<parameter name="test-id" value="npaypinsr_001"/>
@@ -45,6 +44,8 @@
 	    <classes>
 	    	<class name="testDrivers.TestDriver"/>
 	    </classes>
-	</test>
+	</test>-->
+	
+		
  </suite> 
  	

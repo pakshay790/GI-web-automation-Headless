@@ -120,7 +120,7 @@ public class InsORPage {
 	{
 		WebElement element=null;
 		WebDriverWait wait=new WebDriverWait(driver, 100);
-		element=wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//body[1]/div[1]/div[1]//body[1]/div[1]/div[1]")));
+		element=wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//body[1]/div[1]/div[1]/div[1]")));
 		return element;
 	}
 	

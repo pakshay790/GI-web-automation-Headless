@@ -102,176 +102,39 @@ public class InsORTest {
 			
 			LoggerUtils.logInfo("Save Button Clicked");
 			test.pass("Save Button Clicked");
-			Genlib.sleep(5000);
+			Genlib.sleep(3000);
 			
-			String tmp = driver.findElement(By.xpath("//body[1]/app-root[1]/app-page-receipt[1]/div[1]/main[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/app-partial-_arreceipt[1]/section[1]/form[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/wm-input[1]/input[1]")).getAttribute("value");
-			LoggerUtils.logInfo("Official Receipt Number fetched");
+			WebElement alertMsg = InsORPage.alertSuccess(driver); 
+			
+			String msg = alertMsg.getText();
 			Genlib.sleep(2000);
-			System.out.println(tmp);
 			
-			hMapRetObj.put("testRunStatus", Globals.PASS);
-			hMapRetObj.put("depUpdateVal", tmp);
-			
-			Genlib.sleep(2000);
-			File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-			FileUtils.copyFile(scrFile, new File(Globals.SCREENSHOT_DIR + datArr[0] + ".png"));
-			LoggerUtils.logInfo("Official Receipt created");
-			test.pass("Official Receipt created").addScreencastFromPath("file:///" + Globals.SCREENSHOT_DIR + datArr[0] + ".png");
-			
-			/*
-			 * WebElement alertMsg = InsORPage.alertSuccess(driver); String msg =
-			 * alertMsg.getText();
-			 * 
-			 * System.out.println(msg); Genlib.sleep(3000);
-			 */
-	
-
-			/*WebElement sideBarPolicyCreate = PolicyPage.sideBarPolicyProfile(driver);
-			sideBarPolicyCreate.click();
-			LoggerUtils.logInfo("Sidebar Policy profile menu clicked");
-			Genlib.sleep(4000);
-			
-			WebElement txtPolicyNumber = PolicyCreatePage.txtPolicyNumber(driver);
-			txtPolicyNumber.sendKeys(datArr[7]);
-			LoggerUtils.logInfo("POlicy number entered");
-			test.pass("POlicy number entered"); 
-			Genlib.sleep(6000);
-			  
-			WebElement txtInsured = PolicyCreatePage.txtInsuredCode(driver);
-			txtInsured.click(); 
-			Genlib.sleep(1000); 
-			WebElement txtInsuredCodeVal = PolicyCreatePage.txtInsuredCodeVal(driver,datArr[12]); 
-			txtInsuredCodeVal.click();
-			LoggerUtils.logInfo("Insured details entered");
-			test.pass("Insured details entered"); Genlib.sleep(2000);
-			
-			if (datArr[13].equals("Yes")) {
-				WebElement chkBillTO = PolicyCreatePage.billToSameasCustomer(driver);
-				chkBillTO.click(); 
-				LoggerUtils.logInfo("Bill to same as Insured ");
-				test.pass("Bill to same as Insured "); 
+			if (msg.equals("Created Successfully")) {
+				
+				String tmp = driver.findElement(By.xpath("//body[1]/app-root[1]/app-page-receipt[1]/div[1]/main[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/app-partial-_arreceipt[1]/section[1]/form[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/wm-input[1]/input[1]")).getAttribute("value");
+				LoggerUtils.logInfo("Reference number fetched");
 				Genlib.sleep(2000);
-				  
+				
+				
+				hMapRetObj.put("testRunStatus", Globals.PASS);
+				hMapRetObj.put("depUpdateVal", tmp);
+				
+				Genlib.sleep(2000);
+				File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+				FileUtils.copyFile(scrFile, new File(Globals.SCREENSHOT_DIR + datArr[0] + ".png"));
+				LoggerUtils.logInfo("Official Receipt created");
+				test.pass("Official Receipt created").addScreencastFromPath("file:///" + Globals.SCREENSHOT_DIR + datArr[0] + ".png");
+				
 			} else {
-				WebElement txtBillTO = PolicyCreatePage.txtBillCode(driver);
-				txtBillTO.click();
-				Genlib.sleep(1000); 
-				
-				WebElement txtBillTOval = PolicyCreatePage.txtBillCodeVal(driver, datArr[14]);
-				txtBillTOval.click();
-				LoggerUtils.logInfo("Bill to details entered ");
-				test.pass("Bill to details entered "); 
-				Genlib.sleep(2000);
-			}
-			  
-			WebElement txtInsurer = PolicyCreatePage.txtInsurer(driver);
-			txtInsurer.click();
-			Genlib.sleep(1000);
-			WebElement txtInsurerVal = PolicyCreatePage.txtInsurerVal(driver,datArr[15]); 
-			txtInsurerVal.click();
-			LoggerUtils.logInfo("Insurer details entered");
-			test.pass("Insurer details entered"); 
-			Genlib.sleep(2000);
-			
-			if (!datArr[16].equals("")) {
-				
-				WebElement txtIntroducer = PolicyCreatePage.txtIntroducer(driver);
-				txtIntroducer.click();
-				Genlib.sleep(1000);
-				WebElement txtIntroducerVal = PolicyCreatePage.txtIntroducerVal(driver,datArr[16]);
-				txtIntroducerVal.click();
-				LoggerUtils.logInfo("Introducer details entered");
-				test.pass("Introducer details entered"); 
-				Genlib.sleep(2000);
-				
-			}
-
-			WebElement txtClass = PolicyCreatePage.txtClass(driver);
-			txtClass.click();
-			Genlib.sleep(2000);
-
-			WebElement txtClassVal = PolicyCreatePage.txtClassVal(driver,datArr[23]);
-			Genlib.sleep(2000);
-			txtClassVal.click();
-			LoggerUtils.logInfo("Class Selected");
-			test.pass("Class Selected");
-			Genlib.sleep(2000);
-			
-			
-			WebElement txtGrossPrem = PolicyCreatePage.txtGrossPremium(driver);
-			 //This will scroll the page till the element is found
-			JavascriptExecutor js = (JavascriptExecutor) driver;
-	        js.executeScript("arguments[0].scrollIntoView();", txtGrossPrem);
-			txtGrossPrem.sendKeys(datArr[28]);
-			LoggerUtils.logInfo("Gross premium entered");
-			test.pass("Gross premium entered");
-			Genlib.sleep(2000);
-			
-			WebElement txtDiscount = PolicyCreatePage.txtDiscount(driver);
-			txtDiscount.sendKeys(datArr[30]);
-			LoggerUtils.logInfo("Discont entered");
-			test.pass("Discont entered");
-			Genlib.sleep(2000);
-			
-			WebElement txtoutcomm1 = PolicyCreatePage.txtCommission1(driver);
-			txtoutcomm1.clear();
-			Genlib.sleep(1000);
-			txtoutcomm1.sendKeys(datArr[35]);
-			LoggerUtils.logInfo("Our Commission 1 entered");
-			test.pass("Our Commission 1 entered");
-			Genlib.sleep(2000);
-			
-			if (!datArr[16].equals("")) {
-				
-				WebElement txtIntroducerComm = PolicyCreatePage.txtIntroducerCommissionPerc(driver);
-				Genlib.sleep(1000);
-				txtIntroducerComm.clear();
-				Genlib.sleep(1000);
-				txtIntroducerComm.sendKeys(datArr[40]);
-				LoggerUtils.logInfo("Introducer's Commission entered");
-				test.pass("Introducer's Commission entered");
-				Genlib.sleep(2000);
-				
-			}
-			
-			WebElement btnSave = PolicyCreatePage.btnSave(driver);
-			btnSave.click();
-			LoggerUtils.logInfo("Save btton Clicked");
-			test.pass("Save btton Clicked");
-			Genlib.sleep(2000);
-			
-			WebElement alertmsg = PolicyCreatePage.alertSuccess(driver);
-			Genlib.sleep(2000);
-			System.out.println(alertmsg.getText());
-			
-			if ((!datArr[3].equals("duplicateCheck"))  && (alertmsg.getText().equals("Created Successfully"))) {
-				alertmsg.click();
-				hMapRetObj.put("testRunStatus", Globals.PASS);
-				hMapRetObj.put("depUpdateVal", "");
-				File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-				FileUtils.copyFile(scrFile, new File(Globals.SCREENSHOT_DIR + datArr[0] + ".png"));
-				LoggerUtils.logInfo("Policy number should be unique!, Unable to Create Policy");
-				test.pass("Policy number should be unique!, Unable to Create Policy").addScreencastFromPath("file:///" + Globals.SCREENSHOT_DIR + datArr[0] + ".png");
-
-			} 
-			
-			else if((datArr[3].equals("duplicateCheck")) && (alertmsg.getText().equals("Policy number should be unique!"))){
-				alertmsg.click();
-				hMapRetObj.put("testRunStatus", Globals.PASS);
-				hMapRetObj.put("depUpdateVal", "");
-				File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-				FileUtils.copyFile(scrFile, new File(Globals.SCREENSHOT_DIR + datArr[0] + ".png"));
-				LoggerUtils.logInfo("Policy number should be unique!, Unable to Create Policy");
-				test.pass("Policy number should be unique!, Unable to Create Policy").addScreencastFromPath("file:///" + Globals.SCREENSHOT_DIR + datArr[0] + ".png");
-			}
-			else {
 				
 				hMapRetObj.put("testRunStatus", Globals.FAIL);
 				hMapRetObj.put("depUpdateVal", "");
-				LoggerUtils.logError("Failed in test case execution", null);
+				LoggerUtils.logError("Unable to Create Official Receipt", null);
 				Genlib.webDriverTearDown(driver);
-			}*/
 
+			}
+			
+			Genlib.sleep(1000);
 		} catch (Exception e) {
 			hMapRetObj.put("testRunStatus", Globals.EXCEPTION);
 			hMapRetObj.put("depUpdateVal", "");
