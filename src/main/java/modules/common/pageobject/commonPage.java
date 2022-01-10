@@ -37,7 +37,7 @@ public class commonPage {
 	{
 		WebElement element=null;
 		WebDriverWait wait=new WebDriverWait(driver, 50);
-		element=wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("")));
+		element=wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//body[1]/app-root[1]/app-page-policies[1]/div[1]/main[1]/div[1]/aside[1]/app-partial-leftnav_new[1]/section[1]/ul[1]/li[4]/div[1]/a[1]/i[1]")));
 		return element;
 	}
 	

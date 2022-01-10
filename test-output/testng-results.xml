@@ -1,92 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-12-30T11:52:28 IST" name="GI Web App Automation" finished-at="2021-12-30T11:56:41 IST" duration-ms="253895">
+  <suite started-at="2022-01-10T16:47:45 IST" name="GI Web App Automation" finished-at="2022-01-10T16:48:53 IST" duration-ms="68212">
     <groups>
     </groups>
-    <test started-at="2021-12-30T11:52:28 IST" name="Polict Creation" finished-at="2021-12-30T11:53:59 IST" duration-ms="91653">
+    <test started-at="2022-01-10T16:47:45 IST" name="Creating AP" finished-at="2022-01-10T16:48:53 IST" duration-ms="68212">
       <class name="testDrivers.TestDriver">
-        <test-method signature="tDriver(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:testDrivers.TestDriver@4567f35d]" started-at="2021-12-30T11:52:28 IST" name="tDriver" finished-at="2021-12-30T11:53:59 IST" duration-ms="91629" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[newpol_001]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[PolicyConfig]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[NewPolicy]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tDriver -->
-      </class> <!-- testDrivers.TestDriver -->
-    </test> <!-- Polict Creation -->
-    <test started-at="2021-12-30T11:53:59 IST" name="Creating Debit note of Policy" finished-at="2021-12-30T11:55:35 IST" duration-ms="95563">
-      <class name="testDrivers.TestDriver">
-        <test-method signature="tDriver(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:testDrivers.TestDriver@57a3af25]" started-at="2021-12-30T11:53:59 IST" name="tDriver" finished-at="2021-12-30T11:55:35 IST" duration-ms="95560" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[newInsDN_001]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[INSDNCNConfig]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[NewDNCN]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tDriver -->
-      </class> <!-- testDrivers.TestDriver -->
-    </test> <!-- Creating Debit note of Policy -->
-    <test started-at="2021-12-30T11:55:35 IST" name="Creating OR" finished-at="2021-12-30T11:56:41 IST" duration-ms="66652">
-      <class name="testDrivers.TestDriver">
-        <test-method is-config="true" signature="beforeSuite()[pri:0, instance:testDrivers.TestDriver@c8c12ac]" started-at="2021-12-30T11:52:27 IST" name="beforeSuite" finished-at="2021-12-30T11:52:28 IST" duration-ms="135" status="PASS">
+        <test-method is-config="true" signature="beforeSuite()[pri:0, instance:testDrivers.TestDriver@4567f35d]" started-at="2022-01-10T16:47:44 IST" name="beforeSuite" finished-at="2022-01-10T16:47:45 IST" duration-ms="248" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeSuite -->
-        <test-method signature="tDriver(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:testDrivers.TestDriver@c8c12ac]" started-at="2021-12-30T11:55:35 IST" name="tDriver" finished-at="2021-12-30T11:56:41 IST" duration-ms="66650" status="PASS">
+        <test-method signature="tDriver(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:testDrivers.TestDriver@4567f35d]" started-at="2022-01-10T16:47:45 IST" name="tDriver" finished-at="2022-01-10T16:48:53 IST" duration-ms="68178" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[newInsOR_001]]>
+                <![CDATA[npaypinsr_001]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[INSORConfig]]>
+                <![CDATA[APPaytoInsrConfig]]>
               </value>
             </param>
             <param index="2">
               <value>
-                <![CDATA[NewOR]]>
+                <![CDATA[NewPay]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tDriver -->
-        <test-method is-config="true" signature="endReport()[pri:0, instance:testDrivers.TestDriver@c8c12ac]" started-at="2021-12-30T11:56:41 IST" name="endReport" finished-at="2021-12-30T11:56:42 IST" duration-ms="195" status="PASS">
+        <test-method is-config="true" signature="endReport()[pri:0, instance:testDrivers.TestDriver@4567f35d]" started-at="2022-01-10T16:48:53 IST" name="endReport" finished-at="2022-01-10T16:48:53 IST" duration-ms="326" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- endReport -->
       </class> <!-- testDrivers.TestDriver -->
-    </test> <!-- Creating OR -->
+    </test> <!-- Creating AP -->
   </suite> <!-- GI Web App Automation -->
 </testng-results>
