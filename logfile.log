@@ -152,3 +152,125 @@ Session ID: db02e01cfcf4510948cb86b655126480
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 2022-01-11 15:54:35,038 INFO  [LoggerUtils] Driver tear down 
 2022-01-11 15:54:35,038 INFO  [LoggerUtils] Test Failed - newInsOR_001 
+2022-01-11 16:01:02,809 INFO  [LoggerUtils] ****************************************** 
+2022-01-11 16:01:02,809 INFO  [LoggerUtils] Test Case ID: newInsOR_001 
+2022-01-11 16:01:02,809 INFO  [LoggerUtils] ****************************************** 
+2022-01-11 16:01:07,297 INFO  [LoggerUtils] Driver Setup 
+2022-01-11 16:01:11,771 INFO  [LoggerUtils] User Name: admin@eta.com 
+2022-01-11 16:01:12,941 INFO  [LoggerUtils] Password: Success123 
+2022-01-11 16:01:16,068 INFO  [LoggerUtils] Login Successfully, welcome to dashboard 
+2022-01-11 16:01:25,261 INFO  [LoggerUtils] Sidebar menu clicked 
+2022-01-11 16:01:29,989 INFO  [LoggerUtils] Sidebar Account Receivables menu selected 
+2022-01-11 16:01:34,172 INFO  [LoggerUtils] Sidebar Official Receipt menu selected 
+2022-01-11 16:01:44,223 INFO  [LoggerUtils] Customer name entered 
+2022-01-11 16:01:49,649 INFO  [LoggerUtils] Payment mode Selected 
+2022-01-11 16:01:55,055 INFO  [LoggerUtils] Bank Account code Selected 
+2022-01-11 16:02:00,397 INFO  [LoggerUtils] Amount paid entered 
+2022-01-11 16:02:04,684 INFO  [LoggerUtils] Add Pending Invoice button clicked 
+2022-01-11 16:02:08,954 INFO  [LoggerUtils] Invoice number entered in the  
+2022-01-11 16:02:13,133 INFO  [LoggerUtils] Select dropdown clicked 
+2022-01-11 16:02:14,291 INFO  [LoggerUtils] Doc No dropdown value selected 
+2022-01-11 16:02:19,742 ERROR [LoggerUtils] Failed in test case execution 
+org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <button caption="Apply Auto Knock Off" class="btn app-button btn-default" click.event="tblARR_btnAutoKnockClick($event, widget)" marginright="1em" type="button" wmbutton="" widget-id="widget-id532" aria-label="Apply Auto Knock Off" tabindex="0" name="tblARR_btnAutoKnock" style="margin-right: 1em;">...</button> is not clickable at point (562, 687). Other element would receive the click: <modal-container class="modal fade in" role="dialog" tabindex="-1" style="display: block;" aria-modal="true">...</modal-container>
+  (Session info: chrome=97.0.4692.71)
+Build info: version: '4.0.0', revision: '3a21814679'
+System info: host: 'LAPTOP-I0G0DV6M', ip: '192.168.0.105', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '15.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [2a6f213195602e83b11fb548c6d8dffe, clickElement {id=4fa85522-48b7-4e78-88a5-5b8c638685e1}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 97.0.4692.71, chrome: {chromedriverVersion: 96.0.4664.45 (76e4c1bb2ab46..., userDataDir: C:\Users\ADMIN\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:59666}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:59666/devtoo..., se:cdpVersion: 97.0.4692.71, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on WINDOWS (2a6f213195602e83b11fb548c6d8dffe)] -> xpath: //body[1]/app-root[1]/app-page-receipt[1]/div[1]/main[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/app-partial-_arreceipt[1]/section[1]/form[1]/div[1]/div[1]/div[18]/div[1]/div[1]/div[1]/div[1]/button[3]]
+Session ID: 2a6f213195602e83b11fb548c6d8dffe
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:64)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:164)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:139)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:559)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:251)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:77)
+	at modules.insuranceOR.tests.InsORTest.NewOR(InsORTest.java:111)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at testDrivers.TestDriver.tDriver(TestDriver.java:150)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:794)
+	at org.testng.TestRunner.run(TestRunner.java:596)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+	at org.testng.TestNG.runSuites(TestNG.java:1063)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+2022-01-11 16:02:20,647 INFO  [LoggerUtils] Driver tear down 
+2022-01-11 16:02:20,648 INFO  [LoggerUtils] Test Failed - newInsOR_001 
+2022-01-11 16:10:58,471 INFO  [LoggerUtils] ****************************************** 
+2022-01-11 16:10:58,471 INFO  [LoggerUtils] Test Case ID: newInsOR_001 
+2022-01-11 16:10:58,471 INFO  [LoggerUtils] ****************************************** 
+2022-01-11 16:11:02,144 INFO  [LoggerUtils] Driver Setup 
+2022-01-11 16:11:05,488 INFO  [LoggerUtils] User Name: admin@eta.com 
+2022-01-11 16:11:06,599 INFO  [LoggerUtils] Password: Success123 
+2022-01-11 16:11:09,673 INFO  [LoggerUtils] Login Successfully, welcome to dashboard 
+2022-01-11 16:11:18,773 INFO  [LoggerUtils] Sidebar menu clicked 
+2022-01-11 16:11:22,839 INFO  [LoggerUtils] Sidebar Account Receivables menu selected 
+2022-01-11 16:11:43,182 INFO  [LoggerUtils] ****************************************** 
+2022-01-11 16:11:43,182 INFO  [LoggerUtils] Test Case ID: newInsOR_001 
+2022-01-11 16:11:43,182 INFO  [LoggerUtils] ****************************************** 
+2022-01-11 16:11:46,631 INFO  [LoggerUtils] Driver Setup 
+2022-01-11 16:11:50,203 INFO  [LoggerUtils] User Name: admin@eta.com 
+2022-01-11 16:11:51,313 INFO  [LoggerUtils] Password: Success123 
+2022-01-11 16:11:54,396 INFO  [LoggerUtils] Login Successfully, welcome to dashboard 
+2022-01-11 16:12:03,504 INFO  [LoggerUtils] Sidebar menu clicked 
+2022-01-11 16:12:07,672 INFO  [LoggerUtils] Sidebar Account Receivables menu selected 
+2022-01-11 16:12:11,767 INFO  [LoggerUtils] Sidebar Official Receipt menu selected 
+2022-01-11 16:12:20,562 INFO  [LoggerUtils] Customer name entered 
+2022-01-11 16:12:25,805 INFO  [LoggerUtils] Payment mode Selected 
+2022-01-11 16:12:31,014 INFO  [LoggerUtils] Bank Account code Selected 
+2022-01-11 16:12:36,174 INFO  [LoggerUtils] Amount paid entered 
+2022-01-11 16:12:40,331 INFO  [LoggerUtils] Add Pending Invoice button clicked 
+2022-01-11 16:12:44,464 INFO  [LoggerUtils] Invoice number entered in the  
+2022-01-11 16:12:48,543 INFO  [LoggerUtils] Select dropdown clicked 
+2022-01-11 16:12:49,620 INFO  [LoggerUtils] Doc No dropdown value selected 
+2022-01-11 16:12:51,737 INFO  [LoggerUtils] Search button click  
+2022-01-11 16:12:53,838 INFO  [LoggerUtils] Searched Item selectred 
+2022-01-11 16:12:55,906 INFO  [LoggerUtils] Add Button Clicked 
+2022-01-11 16:12:57,991 INFO  [LoggerUtils] Save Button Clicked 
+2022-01-11 16:13:05,198 INFO  [LoggerUtils] Reference number fetched 
+2022-01-11 16:13:11,412 INFO  [LoggerUtils] Official Receipt created 
+2022-01-11 16:13:13,101 INFO  [LoggerUtils] Driver tear down 
+2022-01-11 16:13:13,284 INFO  [LoggerUtils] Test Completed Successfully - newInsOR_001 
+2022-01-11 16:22:57,671 INFO  [LoggerUtils] ****************************************** 
+2022-01-11 16:22:57,671 INFO  [LoggerUtils] Test Case ID: newInsOR_001 
+2022-01-11 16:22:57,671 INFO  [LoggerUtils] ****************************************** 
+2022-01-11 16:23:01,561 INFO  [LoggerUtils] Driver Setup 
+2022-01-11 16:23:04,891 INFO  [LoggerUtils] User Name: admin@eta.com 
+2022-01-11 16:23:06,042 INFO  [LoggerUtils] Password: Success123 
+2022-01-11 16:23:09,127 INFO  [LoggerUtils] Login Successfully, welcome to dashboard 
+2022-01-11 16:23:18,259 INFO  [LoggerUtils] Sidebar menu clicked 
+2022-01-11 16:23:22,329 INFO  [LoggerUtils] Sidebar Account Receivables menu selected 

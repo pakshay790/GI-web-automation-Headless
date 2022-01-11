@@ -36,14 +36,14 @@ public class PolicyTest {
 
 		WebDriver driver = null;
 		
-		driver = setUp(driver);
+		driver = CommonFunctions.setUp(driver);
 
 		String[] datArr = strData.split("\\|");
 		String[] arrMetaData = datArr[3].split("\\,");
 		String[] depValue = depVal.split("\\|");
 
 		try {
-			testSetUp(driver, datArr, test);
+			CommonFunctions.testSetUp(driver, datArr, test);
 			CommonFunctions.logMsg("Login Successfully, welcome to dashboard", test, 6000);
 
 			WebElement sideBar = commonPage.sidebar(driver);
@@ -195,20 +195,6 @@ public class PolicyTest {
 		return hMapRetObj;
 	}
 
-	public static void testSetUp(WebDriver driver, String[] datArr, ExtentTest test) throws Exception {
-		LoginTest.navLogin(driver, datArr, test);
-		WebElement btnSubmit = LoginPage.btnSubmitLogin(driver);
-		btnSubmit.click();
-		// Applib.forceLogin(driver, datArr[5]);
-		Genlib.sleep(1000);
-
-	}
-
-	public static WebDriver setUp(WebDriver driver) {
-		driver = Genlib.webDriverSetUp();
-		String url = projlib.Globals.LOGIN_URL;
-		driver.get(url);
-		return driver;
-	}
+	
 
 }

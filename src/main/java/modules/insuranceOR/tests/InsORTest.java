@@ -9,6 +9,7 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
 
 import modules.common.pageobject.commonPage;
 import modules.common.tests.CommonFunctions;
@@ -31,14 +32,14 @@ public class InsORTest {
 
 		WebDriver driver = null;
 		
-		driver = setUp(driver);
+		driver = CommonFunctions.setUp(driver);
 
 		String[] datArr = strData.split("\\|");
 		String[] arrMetaData = datArr[3].split("\\,");
 		String[] depValArr = depVal.split("\\,");
 
 		try {
-			testSetUp(driver, datArr, test);
+			CommonFunctions.testSetUp(driver, datArr, test);
 			CommonFunctions.logMsg("Login Successfully, welcome to dashboard", test, 4000);
 
 			Genlib.sleep(5000);
@@ -93,18 +94,30 @@ public class InsORTest {
 			txtSearch.sendKeys(depVal);
 			CommonFunctions.logMsg("Invoice number entered in the ", test, 4000);
 			
+			//Using Select class form selenium to select dropdown value
 			WebElement selectField = InsORPage.selectSearchType(driver);
 			selectField.click();
-			CommonFunctions.logMsg("Select dropdown clicked", test, 4000);
+			CommonFunctions.logMsg("Select dropdown clicked", test, 1000);
+			Select selectVal = new Select(selectField);
+			selectVal.selectByVisibleText("Doc No");
+			CommonFunctions.logMsg("Doc No dropdown value selected", test, 2000);
 			
+			WebElement btnSearch = InsORPage.btnDialogSearch(driver);
+			btnSearch.click();
+			CommonFunctions.logMsg("Search button click ", test, 2000);
 			
+			WebElement selectItem = InsORPage.chckSearchItem(driver);
+			selectItem.click();
+			CommonFunctions.logMsg("Searched Item selectred", test, 2000);
 			
+			WebElement btnAdd = InsORPage.btnAddDialog(driver);
+			btnAdd.click();
+			CommonFunctions.logMsg("Add Button Clicked", test, 2000);
 			
-			
-
-			WebElement btnAutoKnockoff = InsORPage.btnAutoknockOff(driver);
+			//Apply AutoKnockoff flow
+			/*WebElement btnAutoKnockoff = InsORPage.btnAutoknockOff(driver);
 			btnAutoKnockoff.click();
-			CommonFunctions.logMsg("Auto Knockoff button clicked", test, 4000);
+			CommonFunctions.logMsg("Auto Knockoff button clicked", test, 4000);*/
 			
 			WebElement btnSave = InsORPage.btnSave(driver);
 			btnSave.click();
@@ -152,20 +165,6 @@ public class InsORTest {
 		return hMapRetObj;
 	}
 
-	public static void testSetUp(WebDriver driver, String[] datArr, ExtentTest test) throws Exception {
-		LoginTest.navLogin(driver, datArr, test);
-		WebElement btnSubmit = LoginPage.btnSubmitLogin(driver);
-		btnSubmit.click();
-		// Applib.forceLogin(driver, datArr[5]);
-		Genlib.sleep(1000);
-
-	}
-
-	public static WebDriver setUp(WebDriver driver) {
-		driver = Genlib.webDriverSetUp();
-		String url = projlib.Globals.LOGIN_URL;
-		driver.get(url);
-		return driver;
-	}
+	
 
 }

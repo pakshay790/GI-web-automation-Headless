@@ -119,6 +119,24 @@ public class InsORPage {
 		return element;
 	}
 	
+	public static WebElement btnAddDialog(WebDriver driver)
+	{
+		WebElement element=null;
+		WebDriverWait wait=new WebDriverWait(driver, 100);
+		element=wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//body[1]/modal-container[1]/app-partial-_arreceipt[1]/div[1]/div[1]/div[3]/button[2]")));
+		return element;
+	}
+	
+	public static WebElement chckSearchItem(WebDriver driver)
+	{
+		WebElement element=null;
+		WebDriverWait wait=new WebDriverWait(driver, 100);
+		element=wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//body[1]/modal-container[1]/app-partial-_arreceipt[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/table[1]/tbody[1]/tr[1]/td[1]/input[1]")));
+		return element;
+	}
+	
+	
+	
 	public static WebElement btnSave(WebDriver driver)
 	{
 		WebElement element=null;

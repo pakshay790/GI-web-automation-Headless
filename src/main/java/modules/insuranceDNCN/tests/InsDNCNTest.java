@@ -12,6 +12,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 import modules.common.pageobject.commonPage;
+import modules.common.tests.CommonFunctions;
 import modules.insuranceDNCN.pageobject.InsDNCNPage;
 import modules.login.pageobject.*;
 import modules.login.tests.LoginTest;
@@ -31,14 +32,14 @@ public class InsDNCNTest {
 
 		WebDriver driver = null;
 		
-		driver = setUp(driver);
+		driver = CommonFunctions.setUp(driver);
 
 		String[] datArr = strData.split("\\|");
 		String[] arrMetaData = datArr[3].split("\\,");
 		
 
 		try {
-			testSetUp(driver, datArr, test);
+			CommonFunctions.testSetUp(driver, datArr, test);
 			LoggerUtils.logInfo("Login Successfully, welcome to dashboard");
 
 			Genlib.sleep(5000);
@@ -182,20 +183,6 @@ public class InsDNCNTest {
 		return hMapRetObj;
 	}
 
-	public static void testSetUp(WebDriver driver, String[] datArr, ExtentTest test) throws Exception {
-		LoginTest.navLogin(driver, datArr, test);
-		WebElement btnSubmit = LoginPage.btnSubmitLogin(driver);
-		btnSubmit.click();
-		// Applib.forceLogin(driver, datArr[5]);
-		Genlib.sleep(1000);
-
-	}
-
-	public static WebDriver setUp(WebDriver driver) {
-		driver = Genlib.webDriverSetUp();
-		String url = projlib.Globals.LOGIN_URL;
-		driver.get(url);
-		return driver;
-	}
+	
 
 }
