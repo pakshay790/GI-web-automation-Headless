@@ -14,6 +14,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 import modules.common.pageobject.commonPage;
+import modules.common.tests.CommonFunctions;
 import modules.insuranceDNCN.pageobject.InsDNCNPage;
 import modules.login.pageobject.*;
 import modules.login.tests.LoginTest;
@@ -43,45 +44,38 @@ public class PolicyTest {
 
 		try {
 			testSetUp(driver, datArr, test);
-			LoggerUtils.logInfo("Login Successfully, welcome to dashboard");
+			CommonFunctions.logMsg("Login Successfully, welcome to dashboard", test);
 
-			Genlib.sleep(5000);
+			Genlib.sleep(2000);
 
 			WebElement sideBar = commonPage.sidebar(driver);
 			sideBar.click();
-			LoggerUtils.logInfo("Sidebar menu clicked");
-			Genlib.sleep(4000);
-
+			CommonFunctions.logMsg("Sidebar menu clicked", test);
+			
 			WebElement sideBarInsurance = commonPage.sidebarInsurance(driver);
 			sideBarInsurance.click();
-			LoggerUtils.logInfo("Sidebar Insurance menu clicked");
-			Genlib.sleep(4000);
-
+			CommonFunctions.logMsg("Sidebar Insurance menu clicked", test);
+			
 			WebElement sideBarPolicyCreate = PolicyPage.sideBarPolicyProfile(driver);
 			sideBarPolicyCreate.click();
-			LoggerUtils.logInfo("Sidebar Policy profile menu clicked");
-			Genlib.sleep(4000);
-			
+			CommonFunctions.logMsg("Sidebar Policy profile menu clicked", test);
+			Genlib.sleep(1000);
 			WebElement txtPolicyNumber = PolicyCreatePage.txtPolicyNumber(driver);
 			txtPolicyNumber.sendKeys(datArr[7]);
-			LoggerUtils.logInfo("POlicy number entered");
-			test.pass("POlicy number entered"); 
-			Genlib.sleep(6000);
+			CommonFunctions.logMsg("Policy number entered", test);
+			Genlib.sleep(1000);
 			  
 			WebElement txtInsured = PolicyCreatePage.txtInsuredCode(driver);
 			txtInsured.click(); 
 			Genlib.sleep(1000); 
 			WebElement txtInsuredCodeVal = PolicyCreatePage.txtInsuredCodeVal(driver,datArr[12]); 
 			txtInsuredCodeVal.click();
-			LoggerUtils.logInfo("Insured details entered");
-			test.pass("Insured details entered"); Genlib.sleep(2000);
+			CommonFunctions.logMsg("Insured details entered", test);
 			
 			if (datArr[13].equals("Yes")) {
 				WebElement chkBillTO = PolicyCreatePage.billToSameasCustomer(driver);
 				chkBillTO.click(); 
-				LoggerUtils.logInfo("Bill to same as Insured ");
-				test.pass("Bill to same as Insured "); 
-				Genlib.sleep(2000);
+				CommonFunctions.logMsg("Bill to same as Insured ", test);
 				  
 			} else {
 				WebElement txtBillTO = PolicyCreatePage.txtBillCode(driver);
@@ -90,9 +84,7 @@ public class PolicyTest {
 				
 				WebElement txtBillTOval = PolicyCreatePage.txtBillCodeVal(driver, datArr[14]);
 				txtBillTOval.click();
-				LoggerUtils.logInfo("Bill to details entered ");
-				test.pass("Bill to details entered "); 
-				Genlib.sleep(2000);
+				CommonFunctions.logMsg("Bill to details entered ", test);
 			}
 			  
 			WebElement txtInsurer = PolicyCreatePage.txtInsurer(driver);
@@ -100,9 +92,7 @@ public class PolicyTest {
 			Genlib.sleep(1000);
 			WebElement txtInsurerVal = PolicyCreatePage.txtInsurerVal(driver,datArr[15]); 
 			txtInsurerVal.click();
-			LoggerUtils.logInfo("Insurer details entered");
-			test.pass("Insurer details entered"); 
-			Genlib.sleep(2000);
+			CommonFunctions.logMsg("Insurer details entered", test);
 			
 			if (!datArr[16].equals("")) {
 				
@@ -111,9 +101,7 @@ public class PolicyTest {
 				Genlib.sleep(1000);
 				WebElement txtIntroducerVal = PolicyCreatePage.txtIntroducerVal(driver,datArr[16]);
 				txtIntroducerVal.click();
-				LoggerUtils.logInfo("Introducer details entered");
-				test.pass("Introducer details entered"); 
-				Genlib.sleep(2000);
+				CommonFunctions.logMsg("Introducer details entered", test);
 				
 			}
 
@@ -124,9 +112,7 @@ public class PolicyTest {
 			WebElement txtClassVal = PolicyCreatePage.txtClassVal(driver,datArr[23]);
 			Genlib.sleep(2000);
 			txtClassVal.click();
-			LoggerUtils.logInfo("Class Selected");
-			test.pass("Class Selected");
-			Genlib.sleep(2000);
+			CommonFunctions.logMsg("Class Selected", test);
 			
 			
 			WebElement txtGrossPrem = PolicyCreatePage.txtGrossPremium(driver);
@@ -134,23 +120,17 @@ public class PolicyTest {
 			JavascriptExecutor js = (JavascriptExecutor) driver;
 	        js.executeScript("arguments[0].scrollIntoView();", txtGrossPrem);
 			txtGrossPrem.sendKeys(datArr[28]);
-			LoggerUtils.logInfo("Gross premium entered");
-			test.pass("Gross premium entered");
-			Genlib.sleep(2000);
+			CommonFunctions.logMsg("Gross premium entered", test);
 			
 			WebElement txtDiscount = PolicyCreatePage.txtDiscount(driver);
 			txtDiscount.sendKeys(datArr[30]);
-			LoggerUtils.logInfo("Discont entered");
-			test.pass("Discont entered");
-			Genlib.sleep(2000);
+			CommonFunctions.logMsg("Discont entered", test);
 			
 			WebElement txtoutcomm1 = PolicyCreatePage.txtCommission1(driver);
 			txtoutcomm1.clear();
 			Genlib.sleep(1000);
 			txtoutcomm1.sendKeys(datArr[35]);
-			LoggerUtils.logInfo("Our Commission 1 entered");
-			test.pass("Our Commission 1 entered");
-			Genlib.sleep(2000);
+			CommonFunctions.logMsg("Our Commission 1 entered", test);
 			
 			if (!datArr[16].equals("")) {
 				
@@ -159,17 +139,12 @@ public class PolicyTest {
 				txtIntroducerComm.clear();
 				Genlib.sleep(1000);
 				txtIntroducerComm.sendKeys(datArr[40]);
-				LoggerUtils.logInfo("Introducer's Commission entered");
-				test.pass("Introducer's Commission entered");
-				Genlib.sleep(2000);
-				
+				CommonFunctions.logMsg("Introducer's Commission entered", test);
 			}
 			
 			WebElement btnSave = PolicyCreatePage.btnSave(driver);
 			btnSave.click();
-			LoggerUtils.logInfo("Save btton Clicked");
-			test.pass("Save btton Clicked");
-			Genlib.sleep(2000);
+			CommonFunctions.logMsg("Save btton Clicked", test);
 			
 			WebElement alertmsg = PolicyCreatePage.alertSuccess(driver);
 			Genlib.sleep(2000);
@@ -179,10 +154,8 @@ public class PolicyTest {
 				
 				WebElement btnAlertOk = PolicyCreatePage.btnAlertOk(driver);
 				btnAlertOk.click(); 
-				LoggerUtils.logInfo("Ok btton Clicked");
-				test.pass("Ok  btton Clicked");
-				Genlib.sleep(2000);
-				
+				CommonFunctions.logMsg("Ok btton Clicked", test);
+
 				hMapRetObj.put("testRunStatus", Globals.PASS);
 				hMapRetObj.put("depUpdateVal", datArr[7]);
 				

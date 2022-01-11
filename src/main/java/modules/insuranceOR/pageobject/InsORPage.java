@@ -93,6 +93,31 @@ public class InsORPage {
 		return element;
 	}
 	
+	public static WebElement btnAddPendingInv(WebDriver driver)
+	{
+		WebElement element=null;
+		WebDriverWait wait=new WebDriverWait(driver, 100);
+		element=wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//body[1]/app-root[1]/app-page-receipt[1]/div[1]/main[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/app-partial-_arreceipt[1]/section[1]/form[1]/div[1]/div[1]/div[18]/div[1]/div[1]/div[1]/div[1]/button[4]")));
+		return element;
+	}
+	
+	public static WebElement txtDialogSearch(WebDriver driver)
+	{
+		WebElement element=null;
+		WebDriverWait wait=new WebDriverWait(driver, 100);
+		element=wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//body[1]/modal-container[1]/app-partial-_arreceipt[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/input[1]")));
+		return element;
+	}
+	
+	
+	
+	public static WebElement btnDialogSearch(WebDriver driver)
+	{
+		WebElement element=null;
+		WebDriverWait wait=new WebDriverWait(driver, 100);
+		element=wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//body[1]/modal-container[1]/app-partial-_arreceipt[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[2]/span[1]/button[1]/i[1]")));
+		return element;
+	}
 	
 	public static WebElement btnSave(WebDriver driver)
 	{

@@ -2,41 +2,41 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-01-10T19:38:48 IST" name="GI Web App Automation" finished-at="2022-01-10T19:39:53 IST" duration-ms="64398">
+  <suite started-at="2022-01-11T15:06:36 IST" name="GI Web App Automation" finished-at="2022-01-11T15:08:03 IST" duration-ms="87230">
     <groups>
     </groups>
-    <test started-at="2022-01-10T19:38:48 IST" name="Creating OR" finished-at="2022-01-10T19:39:53 IST" duration-ms="64398">
+    <test started-at="2022-01-11T15:06:36 IST" name="Polict Creation" finished-at="2022-01-11T15:08:03 IST" duration-ms="87230">
       <class name="testDrivers.TestDriver">
-        <test-method is-config="true" signature="beforeSuite()[pri:0, instance:testDrivers.TestDriver@4567f35d]" started-at="2022-01-10T19:38:48 IST" name="beforeSuite" finished-at="2022-01-10T19:38:48 IST" duration-ms="171" status="PASS">
+        <test-method is-config="true" signature="beforeSuite()[pri:0, instance:testDrivers.TestDriver@4567f35d]" started-at="2022-01-11T15:06:36 IST" name="beforeSuite" finished-at="2022-01-11T15:06:36 IST" duration-ms="232" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeSuite -->
-        <test-method signature="tDriver(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:testDrivers.TestDriver@4567f35d]" started-at="2022-01-10T19:38:48 IST" name="tDriver" finished-at="2022-01-10T19:39:53 IST" duration-ms="64369" status="PASS">
+        <test-method signature="tDriver(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:testDrivers.TestDriver@4567f35d]" started-at="2022-01-11T15:06:36 IST" name="tDriver" finished-at="2022-01-11T15:08:03 IST" duration-ms="87196" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[newInsOR_001]]>
+                <![CDATA[newpol_001]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[INSORConfig]]>
+                <![CDATA[PolicyConfig]]>
               </value>
             </param>
             <param index="2">
               <value>
-                <![CDATA[NewOR]]>
+                <![CDATA[NewPolicy]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tDriver -->
-        <test-method is-config="true" signature="endReport()[pri:0, instance:testDrivers.TestDriver@4567f35d]" started-at="2022-01-10T19:39:53 IST" name="endReport" finished-at="2022-01-10T19:39:53 IST" duration-ms="273" status="PASS">
+        <test-method is-config="true" signature="endReport()[pri:0, instance:testDrivers.TestDriver@4567f35d]" started-at="2022-01-11T15:08:03 IST" name="endReport" finished-at="2022-01-11T15:08:04 IST" duration-ms="410" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- endReport -->
       </class> <!-- testDrivers.TestDriver -->
-    </test> <!-- Creating OR -->
+    </test> <!-- Polict Creation -->
   </suite> <!-- GI Web App Automation -->
 </testng-results>

@@ -11,6 +11,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 import modules.common.pageobject.commonPage;
+import modules.common.tests.CommonFunctions;
 import modules.insuranceOR.pageobject.InsORPage;
 import modules.login.pageobject.*;
 import modules.login.tests.LoginTest;
@@ -34,75 +35,67 @@ public class InsORTest {
 
 		String[] datArr = strData.split("\\|");
 		String[] arrMetaData = datArr[3].split("\\,");
+		String[] depValArr = depVal.split("\\,");
 
 		try {
 			testSetUp(driver, datArr, test);
-			LoggerUtils.logInfo("Login Successfully, welcome to dashboard");
+			CommonFunctions.logMsg("Login Successfully, welcome to dashboard", test);
 
 			Genlib.sleep(5000);
 
 			WebElement sideBar = commonPage.sidebar(driver);
 			sideBar.click();
-			LoggerUtils.logInfo("Sidebar menu clicked");
-			Genlib.sleep(4000);
+			CommonFunctions.logMsg("Sidebar menu clicked", test);
+			
 
 			WebElement sideBarAR = commonPage.sidebarAR(driver);
 			sideBarAR.click();
-			LoggerUtils.logInfo("Sidebar Account Receivables menu selected");
-			Genlib.sleep(4000);
+			CommonFunctions.logMsg("Sidebar Account Receivables menu selected", test);
 			
 			WebElement sideBarOR = InsORPage.sideBarMenuOR(driver);
 			sideBarOR.click();
-			LoggerUtils.logInfo("Sidebar Official Receipt menu selected");
-			Genlib.sleep(5000);
+			CommonFunctions.logMsg("Sidebar Official Receipt menu selected", test);
 			
 			WebElement txtCustomerName = InsORPage.txtCustomerName(driver);
 			txtCustomerName.click(); 
 			Genlib.sleep(1000); 
 			WebElement txtCustomerNameVal = InsORPage.txtCustomerNameVal(driver,datArr[6]); 
 			txtCustomerNameVal.click();
-			LoggerUtils.logInfo("Customer name entered");
-			test.pass("Customer name entered"); 
-			Genlib.sleep(3000);
+			CommonFunctions.logMsg("Customer name entered", test);
 			
 			WebElement txtPaymentMode = InsORPage.txtPaymentMode(driver);
 			txtPaymentMode.click(); 
 			Genlib.sleep(1000); 
 			WebElement txtPaymentModeVal = InsORPage.txtPaymentModeVal(driver,datArr[7]); 
 			txtPaymentModeVal.click();
-			LoggerUtils.logInfo("Payment mode Selected");
-			test.pass("Payment mode Selected"); 
-			Genlib.sleep(3000);
+			CommonFunctions.logMsg("Payment mode Selected", test);
 			
 			WebElement txtBankCode = InsORPage.txtBankCode(driver);
 			txtBankCode.click(); 
 			Genlib.sleep(1000); 
 			WebElement txtBankCodeVal = InsORPage.txtBankCodeVal(driver,datArr[8]); 
 			txtBankCodeVal.click();
-			LoggerUtils.logInfo("Bank Account code Selected");
-			test.pass("Bank Account code Selected"); 
-			Genlib.sleep(3000);
+			CommonFunctions.logMsg("Bank Account code Selected", test);
 			
 			WebElement txtAmountPaid = InsORPage.txtAmountPaid(driver);
 			txtAmountPaid.clear();
 			Genlib.sleep(1000);
 			txtAmountPaid.sendKeys(datArr[10]);
-			LoggerUtils.logInfo("Amount paid entered");
-			test.pass("Amount paid entered"); 
-			Genlib.sleep(3000);
+			CommonFunctions.logMsg("Amount paid entered", test);
 			
+			/*//Add Pending Invoice implementation
+			WebElement btnAddPendingInv= InsORPage.btnAddPendingInv(driver);
+			btnAddPendingInv.click();
+			CommonFunctions.logMsg("Add Pending Invoice button clicked", test);*/
+			
+
 			WebElement btnAutoKnockoff = InsORPage.btnAutoknockOff(driver);
 			btnAutoKnockoff.click();
-			Genlib.sleep(3000);
-			LoggerUtils.logInfo("Auto Knockoff button clicked");
-			test.pass("Auto Knockoff button clicked"); 
+			CommonFunctions.logMsg("Auto Knockoff button clicked", test);
 			
 			WebElement btnSave = InsORPage.btnSave(driver);
 			btnSave.click();
-			
-			LoggerUtils.logInfo("Save Button Clicked");
-			test.pass("Save Button Clicked");
-			Genlib.sleep(3000);
+			CommonFunctions.logMsg("Save Button Clicked", test);
 			
 			WebElement alertMsg = InsORPage.alertSuccess(driver); 
 			
@@ -112,10 +105,7 @@ public class InsORTest {
 			if (msg.equals("Created Successfully")) {
 				
 				String tmp = driver.findElement(By.xpath("//body[1]/app-root[1]/app-page-receipt[1]/div[1]/main[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/app-partial-_arreceipt[1]/section[1]/form[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/wm-input[1]/input[1]")).getAttribute("value");
-				LoggerUtils.logInfo("Reference number fetched");
-				Genlib.sleep(2000);
-				
-				
+				CommonFunctions.logMsg("Reference number fetched", test);
 				hMapRetObj.put("testRunStatus", Globals.PASS);
 				hMapRetObj.put("depUpdateVal", tmp);
 				
