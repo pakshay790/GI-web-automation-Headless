@@ -156,6 +156,13 @@ public class InsORPage {
 		element=wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//body[1]/app-root[1]/app-page-receipt[1]/div[1]/main[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/app-partial-_arreceipt[1]/section[1]/form[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/wm-input[1]/input[1]")));
 		return element;
 	}
+
+	public static WebElement selectSearchType(WebDriver driver) {
+		WebElement element=null;
+		WebDriverWait wait=new WebDriverWait(driver, 100);
+		element=wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//body[1]/modal-container[1]/app-partial-_arreceipt[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[2]/select[1]")));
+		return element;
+	}
 	
 	
 }

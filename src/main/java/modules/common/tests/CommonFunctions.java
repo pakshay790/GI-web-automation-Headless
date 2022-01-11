@@ -14,11 +14,11 @@ public class CommonFunctions {
 		return null;
 	}
 		
-	public static void logMsg(String str,ExtentTest test) {
+	public static void logMsg(String str,ExtentTest test,int wait) {
 		
 		LoggerUtils.logInfo(str);
 		test.pass(str); 
-		Genlib.sleep(3000);
+		Genlib.sleep(wait);
 	}
 		
 	

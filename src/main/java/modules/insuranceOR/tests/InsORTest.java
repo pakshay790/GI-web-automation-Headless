@@ -39,63 +39,76 @@ public class InsORTest {
 
 		try {
 			testSetUp(driver, datArr, test);
-			CommonFunctions.logMsg("Login Successfully, welcome to dashboard", test);
+			CommonFunctions.logMsg("Login Successfully, welcome to dashboard", test, 4000);
 
 			Genlib.sleep(5000);
 
 			WebElement sideBar = commonPage.sidebar(driver);
 			sideBar.click();
-			CommonFunctions.logMsg("Sidebar menu clicked", test);
+			CommonFunctions.logMsg("Sidebar menu clicked", test, 4000);
 			
 
 			WebElement sideBarAR = commonPage.sidebarAR(driver);
 			sideBarAR.click();
-			CommonFunctions.logMsg("Sidebar Account Receivables menu selected", test);
+			CommonFunctions.logMsg("Sidebar Account Receivables menu selected", test, 4000);
 			
 			WebElement sideBarOR = InsORPage.sideBarMenuOR(driver);
 			sideBarOR.click();
-			CommonFunctions.logMsg("Sidebar Official Receipt menu selected", test);
+			CommonFunctions.logMsg("Sidebar Official Receipt menu selected", test, 7000);
+		
 			
 			WebElement txtCustomerName = InsORPage.txtCustomerName(driver);
 			txtCustomerName.click(); 
 			Genlib.sleep(1000); 
 			WebElement txtCustomerNameVal = InsORPage.txtCustomerNameVal(driver,datArr[6]); 
 			txtCustomerNameVal.click();
-			CommonFunctions.logMsg("Customer name entered", test);
+			CommonFunctions.logMsg("Customer name entered", test, 4000);
 			
 			WebElement txtPaymentMode = InsORPage.txtPaymentMode(driver);
 			txtPaymentMode.click(); 
 			Genlib.sleep(1000); 
 			WebElement txtPaymentModeVal = InsORPage.txtPaymentModeVal(driver,datArr[7]); 
 			txtPaymentModeVal.click();
-			CommonFunctions.logMsg("Payment mode Selected", test);
+			CommonFunctions.logMsg("Payment mode Selected", test, 4000);
 			
 			WebElement txtBankCode = InsORPage.txtBankCode(driver);
 			txtBankCode.click(); 
 			Genlib.sleep(1000); 
 			WebElement txtBankCodeVal = InsORPage.txtBankCodeVal(driver,datArr[8]); 
 			txtBankCodeVal.click();
-			CommonFunctions.logMsg("Bank Account code Selected", test);
+			CommonFunctions.logMsg("Bank Account code Selected", test, 4000);
 			
 			WebElement txtAmountPaid = InsORPage.txtAmountPaid(driver);
 			txtAmountPaid.clear();
 			Genlib.sleep(1000);
 			txtAmountPaid.sendKeys(datArr[10]);
-			CommonFunctions.logMsg("Amount paid entered", test);
+			CommonFunctions.logMsg("Amount paid entered", test, 4000);
 			
-			/*//Add Pending Invoice implementation
+			//Add Pending Invoice implementation
 			WebElement btnAddPendingInv= InsORPage.btnAddPendingInv(driver);
 			btnAddPendingInv.click();
-			CommonFunctions.logMsg("Add Pending Invoice button clicked", test);*/
+			CommonFunctions.logMsg("Add Pending Invoice button clicked", test, 4000);
+			
+			WebElement txtSearch = InsORPage.txtDialogSearch(driver);
+			txtSearch.sendKeys(depVal);
+			CommonFunctions.logMsg("Invoice number entered in the ", test, 4000);
+			
+			WebElement selectField = InsORPage.selectSearchType(driver);
+			selectField.click();
+			CommonFunctions.logMsg("Select dropdown clicked", test, 4000);
+			
+			
+			
+			
 			
 
 			WebElement btnAutoKnockoff = InsORPage.btnAutoknockOff(driver);
 			btnAutoKnockoff.click();
-			CommonFunctions.logMsg("Auto Knockoff button clicked", test);
+			CommonFunctions.logMsg("Auto Knockoff button clicked", test, 4000);
 			
 			WebElement btnSave = InsORPage.btnSave(driver);
 			btnSave.click();
-			CommonFunctions.logMsg("Save Button Clicked", test);
+			CommonFunctions.logMsg("Save Button Clicked", test, 4000);
 			
 			WebElement alertMsg = InsORPage.alertSuccess(driver); 
 			
@@ -105,7 +118,7 @@ public class InsORTest {
 			if (msg.equals("Created Successfully")) {
 				
 				String tmp = driver.findElement(By.xpath("//body[1]/app-root[1]/app-page-receipt[1]/div[1]/main[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/app-partial-_arreceipt[1]/section[1]/form[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/wm-input[1]/input[1]")).getAttribute("value");
-				CommonFunctions.logMsg("Reference number fetched", test);
+				CommonFunctions.logMsg("Reference number fetched", test, 4000);
 				hMapRetObj.put("testRunStatus", Globals.PASS);
 				hMapRetObj.put("depUpdateVal", tmp);
 				
