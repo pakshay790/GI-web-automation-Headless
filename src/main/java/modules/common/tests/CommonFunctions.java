@@ -2,6 +2,7 @@ package modules.common.tests;
 
 import java.util.HashMap;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
@@ -15,6 +16,7 @@ import modules.login.tests.LoginTest;
 
 public class CommonFunctions {
 
+	static JavascriptExecutor js ;
 	public static HashMap<String, String> AddPendingInvoices(String strData, ExtentTest test, String depVal) throws Exception {
 		return null;
 	}
@@ -39,6 +41,8 @@ public class CommonFunctions {
 		btnSubmit.click();
 		// Applib.forceLogin(driver, datArr[5]);
 		Genlib.sleep(1000);
+//		js = (JavascriptExecutor) driver;
+//		js.executeScript("document.body.style.zoom='90%';");
 
 	}
 		

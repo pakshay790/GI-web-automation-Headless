@@ -46,7 +46,7 @@ public class InsORTest {
 
 			WebElement sideBar = commonPage.sidebar(driver);
 			sideBar.click();
-			CommonFunctions.logMsg("Sidebar menu clicked", test, 4000);
+			CommonFunctions.logMsg("Sidebar menu clicked", test, 5000);
 			
 
 			WebElement sideBarAR = commonPage.sidebarAR(driver);

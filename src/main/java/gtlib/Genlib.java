@@ -48,8 +48,20 @@ public class Genlib
 		{
 			case "chrome":
 				System.setProperty("webdriver.chrome.driver", Globals.CHROME_DRIVER_PATH);
-				driver = new ChromeDriver();
-				driver.manage().window().maximize();
+				
+				Properties prop = new Properties();
+				ChromeOptions options = new ChromeOptions();
+				options.addArguments("--headless"); //for headless mode
+				options.addArguments("--window-size=800,600");//The invisible browser window is only 800x600 in size
+				options.addArguments("start-maximized"); // open Browser in maximized mode
+				options.addArguments("disable-infobars"); // disabling infobars
+				options.addArguments("--disable-extensions"); // disabling extensions
+				options.addArguments("--disable-gpu"); // applicable to windows os only
+				options.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
+				options.addArguments("--no-sandbox");
+				driver = new ChromeDriver(options);
+//				driver = new ChromeDriver();
+//				driver.manage().window().maximize();
 				break;
 			default:
 			case "firefox":
