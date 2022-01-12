@@ -52,7 +52,7 @@ public class Genlib
 				Properties prop = new Properties();
 				ChromeOptions options = new ChromeOptions();
 				options.addArguments("--headless"); //for headless mode
-				options.addArguments("--window-size=800,600");//The invisible browser window is only 800x600 in size
+				
 				options.addArguments("start-maximized"); // open Browser in maximized mode
 				options.addArguments("disable-infobars"); // disabling infobars
 				options.addArguments("--disable-extensions"); // disabling extensions
